@@ -1,38 +1,28 @@
 import styles from './ItemCard.module.css';
 
 export const ItemCard = ({ item }) => {
-    const getTitleStyle = () => {
-        switch (item.status) {
-            case 'Done':
-                return styles['itemcard__title--done'];
-            case 'In Progress':
-                return styles['itemcard__title--in-progress'];
-            default:
-                return styles['itemcard__title--pending'];
-        }
+    const titleStyles = {
+        Done: styles['itemcard__title--done'],
+        'In Progress': styles['itemcard__title--in-progress'],
+        pending: styles['itemcard__title--pending'],
     };
 
-    const getStatusStyle = () => {
-        switch (item.status) {
-            case 'Done':
-                return styles['itemcard__status--done'];
-            case 'In Progress':
-                return styles['itemcard__status--in-progress'];
-            default:
-                return styles['itemcard__status--pending'];
-        }
+    const statusStyles = {
+        Done: styles['itemcard__status--done'],
+        'In Progress': styles['itemcard__status--in-progress'],
+        pending: styles['itemcard__status--pending'],
     };
 
     return (
-        <article className={styles['itemcard']}>
-            <h4 className={`${styles['itemcard__title']} ${getTitleStyle()}`}>
+        <article className={styles.itemcard}>
+            <h4
+                className={`${styles.itemcard__title} ${titleStyles[item.status] || titleStyles.pending}`}
+            >
                 {item.title}
             </h4>
-            <p className={styles['itemcard__description']}>
-                {item.description}
-            </p>
+            <p className={styles.itemcard__description}>{item.description}</p>
             <span
-                className={`${styles['itemcard__status']} ${getStatusStyle()}`}
+                className={`${styles.itemcard__status} ${statusStyles[item.status] || statusStyles.pending}`}
             >
                 {item.status}
             </span>

@@ -1,12 +1,12 @@
 .list-header {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: white;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text-dark);
 }
 
 @media (prefers-color-scheme: light) {
     .list-header {
-        color: black;
+        color: var(--color-text-light);
     }
 }

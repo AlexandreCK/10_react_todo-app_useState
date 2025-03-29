@@ -5,17 +5,17 @@
 
 body {
     min-height: 100vh;
-    background-color: #282828;
-    color: white;
-    font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+    font-family: var(--font-family);
 }
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color: #efefef;
+        background-color: var(--color-bg-light);
     }
 
     body {
-        color: black;
+        color: var(--color-text-light);
     }
 }
